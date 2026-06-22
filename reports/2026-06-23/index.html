@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>매매를 위한 오늘의 공시 정리 · 2026.06.23</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<section class="cover">
+  <div class="cover-inner">
+    <div class="chip">DAILY DISCLOSURE · TRADING NOTE</div>
+    <div class="subtitle">DART 기반 · 2026.06.23</div>
+    <h1 class="title">매매를 위한<br/>오늘의 공시 정리</h1>
+    <p class="lead">
+      2026년 06월 23일 DART 전자공시시스템에 접수된 공시 중
+      유가증권·코스닥 시장만 추려 <strong>1건</strong>을 종목별로 정리했습니다.
+      공시 유형 기반 룰로 매매 시그널을 1차 분류했습니다.
+      <span class="lead-mute">(전체 1건 중 코넥스·기타법인·펀드공시 제외)</span>
+    </p>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">1</div>
+        <div class="stat-label">공시 건수</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">1</div>
+        <div class="stat-label">종목 수</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0</div>
+        <div class="stat-label">매수 시그널</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0</div>
+        <div class="stat-label">매도/회피</div>
+      </div>
+    </div>
+    <p class="disclaimer">
+      본 자료는 투자 참고용이며 매수/매도를 권유하지 않습니다. 시그널은 공시 제목 기반의
+      단순 룰 분류이므로 실제 매매 임팩트는 본문·금액·매출대비 비중에 따라 달라질 수 있습니다.
+      투자의 최종 판단·책임은 투자자 본인에게 있습니다.
+    </p>
+  </div>
+</section>
+
+<section class="signal-summary">
+  <div class="signal-summary-inner">
+    <button class="signal-pill signal-strong-buy" data-signal-filter="강매수">
+      <span class="signal-pill-label">강매수</span>
+      <span class="signal-pill-num">0</span>
+    </button>
+    <button class="signal-pill signal-buy" data-signal-filter="매수">
+      <span class="signal-pill-label">매수</span>
+      <span class="signal-pill-num">0</span>
+    </button>
+    <button class="signal-pill signal-buy-lean" data-signal-filter="중립~매수">
+      <span class="signal-pill-label">중립~매수</span>
+      <span class="signal-pill-num">0</span>
+    </button>
+    <button class="signal-pill signal-neutral" data-signal-filter="중립">
+      <span class="signal-pill-label">중립</span>
+      <span class="signal-pill-num">1</span>
+    </button>
+    <button class="signal-pill signal-watch" data-signal-filter="관망">
+      <span class="signal-pill-label">관망</span>
+      <span class="signal-pill-num">0</span>
+    </button>
+    <button class="signal-pill signal-sell" data-signal-filter="매도">
+      <span class="signal-pill-label">매도</span>
+      <span class="signal-pill-num">0</span>
+    </button>
+    <button class="signal-pill signal-avoid" data-signal-filter="회피">
+      <span class="signal-pill-label">회피</span>
+      <span class="signal-pill-num">0</span>
+    </button>
+  </div>
+</section>
+
+<section class="index">
+  <header class="index-head">
+    <div class="index-title">공시 일일 리포트 · 2026.06.23</div>
+    <div class="index-meta" id="indexMeta">전체 1건 · 1개 종목</div>
+  </header>
+
+  <div class="controls">
+    <input type="text" id="searchInput" class="search-input" placeholder="종목명·코드 검색" autocomplete="off" />
+    <div class="control-group">
+      <button class="market-toggle active" data-market-filter="Y">유가증권</button>
+      <button class="market-toggle active" data-market-filter="K">코스닥</button>
+    </div>
+    <div class="control-group">
+      <label class="control-label">정렬</label>
+      <select id="sortSelect" class="sort-select">
+        <option value="time-desc" selected>시각 (최신순)</option>
+        <option value="time-asc">시각 (오래된순)</option>
+        <option value="signal-desc">시그널 강도 (강매수→회피)</option>
+        <option value="signal-asc">시그널 강도 (회피→강매수)</option>
+        <option value="rate-desc">등락률 (상승순)</option>
+        <option value="rate-asc">등락률 (하락순)</option>
+        <option value="cap-desc">시총 (큰순)</option>
+        <option value="cap-asc">시총 (작은순)</option>
+      </select>
+    </div>
+    <div class="control-group view-toggle">
+      <button class="view-btn active" data-view="flat">공시 단위</button>
+      <button class="view-btn" data-view="grouped">종목 단위</button>
+    </div>
+    <button class="reset-btn" id="resetFilters" title="필터 초기화">초기화</button>
+  </div>
+
+  <div class="table-wrap view view-flat" id="viewFlat">
+    <table class="disclosure-table">
+      <thead>
+        <tr>
+          <th class="col-time">시각</th>
+          <th class="col-corp">종목</th>
+          <th class="col-report">공시 내용</th>
+          <th class="col-market">시장</th>
+          <th class="col-change">시총 / 등락률</th>
+          <th class="col-signal">시그널</th>
+          <th class="col-link">원문</th>
+        </tr>
+      </thead>
+      <tbody id="flatTbody">
+        <tr
+          data-corp="보로노이"
+          data-code="310210"
+          data-signal="중립"
+          data-signal-rank="4"
+          data-market="K"
+          data-time="00:00"
+          data-rate="2.87"
+          data-cap="3689635285500"
+        >
+          <td class="col-time">—</td>
+          <td class="col-corp">
+            <div class="corp-name">보로노이</div>
+              <div class="corp-code">310210</div>
+          </td>
+          <td class="col-report">
+            주요사항보고서(자기전환사채만기전취득결정)
+          </td>
+          <td class="col-market">
+            <span class="market market-K">코스닥</span>
+          </td>
+          <td class="col-change change-up">
+              <div class="market-cap">3조 6,896억</div>
+            <div class="change-rate">+2.87%</div>
+          </td>
+          <td class="col-signal">
+            <span class="signal signal-neutral">중립</span>
+          </td>
+          <td class="col-link">
+            <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260622000415" target="_blank" rel="noopener">DART ▶</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap view view-grouped hidden" id="viewGrouped">
+    <table class="disclosure-table grouped">
+      <thead>
+        <tr>
+          <th class="col-corp">종목</th>
+          <th class="col-market">시장</th>
+          <th class="col-change">시총 / 등락률</th>
+          <th class="col-time">시각</th>
+          <th class="col-report">공시 내용</th>
+          <th class="col-signal">시그널</th>
+          <th class="col-link">원문</th>
+        </tr>
+      </thead>
+      <tbody class="stock-group"
+        data-corp="보로노이"
+        data-code="310210"
+        data-market="K"
+        data-time="00:00"
+        data-rate="2.87"
+        data-cap="3689635285500"
+        data-signal-rank="4"
+        data-group-signals="중립"
+      >
+        <tr class="group-row group-first group-last">
+          <td class="col-corp" rowspan="1">
+            <div class="corp-name">보로노이</div>
+              <div class="corp-code">310210</div>
+          </td>
+          <td class="col-market" rowspan="1">
+            <span class="market market-K">코스닥</span>
+          </td>
+          <td class="col-change change-up" rowspan="1">
+              <div class="market-cap">3조 6,896억</div>
+            <div class="change-rate">+2.87%</div>
+          </td>
+          <td class="col-time">—</td>
+          <td class="col-report">
+            주요사항보고서(자기전환사채만기전취득결정)
+          </td>
+          <td class="col-signal">
+            <span class="signal signal-neutral">중립</span>
+          </td>
+          <td class="col-link">
+            <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260622000415" target="_blank" rel="noopener">DART ▶</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer class="index-foot">
+    생성 시각 2026-06-23 00:51
+  </footer>
+</section>
+
+<script src="report.js"></script>
+</body>
+</html>
